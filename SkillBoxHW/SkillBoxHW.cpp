@@ -1,5 +1,6 @@
 ﻿#include <iostream>
 #include <ctime>
+#include <cmath>
 
 class myClass {
 private:
@@ -38,6 +39,26 @@ public:
 	}
 };
 
+class Vector {
+private:
+	double x;
+	double y;
+	double z;
+
+public:
+	Vector() : x(0), y(0), z(0) {
+
+	};
+
+	Vector(double _x, double _y, double _z) : x(_x), y(_y), z(_z) {
+
+	};
+
+	double getLength() {
+		return sqrt(pow(x,2) + pow(y,2) + pow(z,2));
+	}
+};
+
 int main() {
 	myClass oneB("One B", 21);
 	oneB.getName();
@@ -45,4 +66,7 @@ int main() {
 	oneB.setName("Superclass");
 	oneB.addStudent("Egor");
 	oneB.showInfo();
+
+	Vector myVector(10, 122, 56);
+	std::cout<<"my vector length is: "<< myVector.getLength();
 }
